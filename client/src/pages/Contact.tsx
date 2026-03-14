@@ -1,5 +1,5 @@
 /*
- * Contact Page — Lotus Essence Academy
+ * Contact Page — SeveneEight合同会社
  * Design: Feminine Elegant — pink/gold palette
  * Google Form link: placeholder (to be replaced by client)
  */
@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Google Form URL — クライアントから受け取り次第差し替えてください
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/PLACEHOLDER/viewform";
+const GOOGLE_FORM_URL = "https://forms.google.com"; // ← Googleフォームに差し替え
 
 export default function Contact() {
   return (
