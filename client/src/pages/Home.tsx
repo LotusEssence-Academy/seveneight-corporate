@@ -33,10 +33,10 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 }
 
 const services = [
-  { title: "Well-being パーソナルコーチング", description: "個人の目標達成や人生設計をサポートするマンツーマンのコーチングセッション。", href: "/services/coaching" },
-  { title: "LEAオンラインサロン", description: "自己成長やWell-beingをテーマにしたオンラインコミュニティ型サブスクリプションサービス。", href: "/services/salon" },
-  { title: "ウェルネスコミュニティ", description: "心身の健康やライフスタイルの向上をテーマにオンライン・オフラインで交流や学びの場を提供。", href: "/services/community" },
-  { title: "ウェルネス製品販売", description: "日常の健康維持やライフスタイル向上をサポートするウェルネス関連製品の販売。", href: "/services/products" },
+  { title: "Well-being パーソナルコーチング", description: "個人の目標達成や人生設計をサポートするマンツーマンのコーチングセッション。", href: "/services/coaching", badge: "満員御礼" },
+  { title: "LEAオンラインサロン", description: "自己成長やWell-beingをテーマにしたオンラインコミュニティ型サブスクリプションサービス。", href: "/services/salon", badge: "満員御礼" },
+  { title: "ウェルネスコミュニティ", description: "心身の健康やライフスタイルの向上をテーマにオンライン・オフラインで交流や学びの場を提供。", href: "/services/community", badge: "満員御礼" },
+  { title: "ウェルネス製品販売", description: "日常の健康維持やライフスタイル向上をサポートするウェルネス関連製品の販売。", href: "/services/products", badge: "クライアント限定" },
 ];
 
 const results = [
@@ -284,12 +284,14 @@ export default function Home() {
                   >
                     {service.title}
                   </h3>
-                  <span
-                    className="font-['Noto_Sans_JP'] text-[10px] tracking-wider px-2 py-0.5"
-                    style={{ background: "#3d1a24", color: "#c9a96e" }}
-                  >
-                    満員御礼
-                  </span>
+                  {service.badge && (
+                            <span
+                              className="font-['Noto_Sans_JP'] text-[10px] tracking-wider px-2 py-0.5"
+                              style={{ background: "#3d1a24", color: "#c9a96e" }}
+                            >
+                              {service.badge}
+                            </span>
+                          )}
                 </div>
                 <p
                   className="font-['Noto_Sans_JP'] font-light text-sm leading-loose mb-5"
