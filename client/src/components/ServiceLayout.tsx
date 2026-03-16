@@ -1,11 +1,11 @@
 /*
- * ServiceLayout — Lotus Essence Academy
+ * ServiceLayout — SeveneEight合同会社
  * Shared layout for all service detail pages
  * Design: Feminine Elegant — pink/gold palette, Cormorant Garamond headings
  */
 
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Bell } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -42,7 +42,7 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
             transition={{ duration: 0.5 }}
             className="mb-12"
           >
-            <Link href="/#services">
+            <Link href="/services">
               <span
                 className="inline-flex items-center gap-2 font-['Noto_Sans_JP'] text-xs tracking-widest transition-colors duration-300 hover:opacity-70"
                 style={{ color: "#d4909a" }}
@@ -107,6 +107,45 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
         </div>
       </section>
 
+      {/* 満員御礼バナー */}
+      <section style={{ background: "#fdf8f5" }}>
+        <div className="container mx-auto px-6 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 lg:p-8"
+            style={{ background: "#3d1a24", borderLeft: "4px solid #c9a96e" }}
+          >
+            <div className="flex items-center gap-3 shrink-0">
+              <Bell size={16} style={{ color: "#c9a96e" }} />
+              <span className="font-['Cormorant_Garamond'] text-base tracking-wider" style={{ color: "#c9a96e" }}>
+                現在満員御礼
+              </span>
+            </div>
+            <p className="font-['Noto_Sans_JP'] font-light text-sm leading-relaxed flex-1" style={{ color: "rgba(249,208,216,0.85)" }}>
+              現在、本サービスは定員に達しております。次回募集の際にご案内をご希望の方は、お問い合わせフォームよりご登録ください。
+            </p>
+            <Link href="/contact">
+              <span
+                className="font-['Noto_Sans_JP'] text-xs tracking-widest px-5 py-2.5 shrink-0 cursor-pointer transition-all duration-300 whitespace-nowrap"
+                style={{ border: "1px solid #c9a96e", color: "#c9a96e" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#c9a96e";
+                  (e.currentTarget as HTMLElement).style.color = "#3d1a24";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "transparent";
+                  (e.currentTarget as HTMLElement).style.color = "#c9a96e";
+                }}
+              >
+                再募集通知を受け取る
+              </span>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-6 lg:px-16">
@@ -123,13 +162,13 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
             className="font-['Cormorant_Garamond'] font-light mt-6 mb-4"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#f9d0d8" }}
           >
-            まずはお気軽にご相談ください
+            再募集のご案内を受け取る
           </h2>
           <p
             className="font-['Noto_Sans_JP'] font-light text-sm leading-loose mb-8"
             style={{ color: "rgba(249,208,216,0.7)" }}
           >
-            サービスに関するご質問・ご相談はお問い合わせフォームよりお送りください。
+            次回募集の開始時にご連絡いたします。ご希望のサービスをお問い合わせフォームよりお知らせください。
           </p>
           <Link href="/contact">
             <span className="btn-gold font-['Cormorant_Garamond'] text-sm tracking-widest">

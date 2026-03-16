@@ -238,6 +238,33 @@ export default function Home() {
             </motion.h2>
           </AnimatedSection>
 
+          {/* 満員御礼バナー */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 lg:p-6 mb-8"
+            style={{ background: "#3d1a24", borderLeft: "4px solid #c9a96e" }}
+          >
+            <div className="flex items-center gap-2 shrink-0">
+              <span className="font-['Cormorant_Garamond'] text-base tracking-wider" style={{ color: "#c9a96e" }}>満員御礼</span>
+            </div>
+            <p className="font-['Noto_Sans_JP'] font-light text-sm leading-relaxed flex-1" style={{ color: "rgba(249,208,216,0.85)" }}>
+              現在、全サービスにおいて定員に達しております。次回募集のご案内をご希望の方はお問い合わせフォームよりご登録ください。
+            </p>
+            <Link href="/contact">
+              <span
+                className="font-['Noto_Sans_JP'] text-xs tracking-widest px-4 py-2 shrink-0 cursor-pointer transition-all duration-300 whitespace-nowrap"
+                style={{ border: "1px solid #c9a96e", color: "#c9a96e" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#c9a96e"; (e.currentTarget as HTMLElement).style.color = "#3d1a24"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#c9a96e"; }}
+              >
+                再募集通知を受け取る
+              </span>
+            </Link>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 gap-5 lg:gap-6 mb-12">
             {services.map((service, i) => (
               <motion.div
@@ -250,12 +277,20 @@ export default function Home() {
                 className="group bg-white p-8"
                 style={{ border: "1px solid #f9d0d8", boxShadow: "0 2px 16px rgba(212,144,154,0.06)" }}
               >
-                <h3
-                  className="font-['Cormorant_Garamond'] font-light text-xl mb-3 leading-snug"
-                  style={{ color: "#2d1f1f" }}
-                >
-                  {service.title}
-                </h3>
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
+                  <h3
+                    className="font-['Cormorant_Garamond'] font-light text-xl leading-snug"
+                    style={{ color: "#2d1f1f" }}
+                  >
+                    {service.title}
+                  </h3>
+                  <span
+                    className="font-['Noto_Sans_JP'] text-[10px] tracking-wider px-2 py-0.5"
+                    style={{ background: "#3d1a24", color: "#c9a96e" }}
+                  >
+                    満員御礼
+                  </span>
+                </div>
                 <p
                   className="font-['Noto_Sans_JP'] font-light text-sm leading-loose mb-5"
                   style={{ color: "#2d1f1f", opacity: 0.68 }}
