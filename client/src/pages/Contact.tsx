@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Google Form URL — クライアントから受け取り次第差し替えてください
-const GOOGLE_FORM_URL = "https://forms.google.com"; // ← Googleフォームに差し替え
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc21ASgg5ImcdJ4uhj_AAGQXKXQO6SlzP_0UfqYsThwY81phg/viewform";
 
 export default function Contact() {
   return (

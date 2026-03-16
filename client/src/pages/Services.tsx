@@ -38,6 +38,7 @@ const services = [
     title: "Well-being パーソナルコーチング",
     description: "個人の目標達成や人生設計をサポートするマンツーマンのコーチングセッション。思考整理、ビジョン設計、行動計画を通じてより主体的で自立した人生づくりをサポートします。",
     href: "/services/coaching",
+    badge: "満員御礼",
   },
   {
     icon: BookOpen,
@@ -46,6 +47,7 @@ const services = [
     description: "自己成長やWell-beingをテーマにしたオンラインコミュニティ型サブスクリプションサービス。定期的な学びのコンテンツ、ライブ配信、コミュニティ交流を通じて継続的な自己成長をサポートします。",
     href: "/services/salon",
     note: "Lotus Essence Academy（LEA）",
+    badge: "満員御礼",
   },
   {
     icon: Leaf,
@@ -53,6 +55,7 @@ const services = [
     title: "ウェルネスコミュニティ",
     description: "心身の健康やライフスタイルの向上をテーマにオンライン・オフラインで交流や学びの場を提供。参加者同士が学び合い、支え合いながらより豊かなライフスタイルを実現することを目的としています。",
     href: "/services/community",
+    badge: "満員御礼",
   },
   {
     icon: ShoppingBag,
@@ -60,6 +63,7 @@ const services = [
     title: "ウェルネス製品販売",
     description: "日常の健康維持やライフスタイル向上をサポートするウェルネス関連製品の販売。エッセンシャルオイルや自然由来製品など、生活に取り入れやすいウェルネスアイテムを取り扱っています。",
     href: "/services/products",
+    badge: "クライアント限定",
   },
 ];
 
@@ -197,13 +201,15 @@ export default function Services() {
                               {service.note}
                             </span>
                           )}
-                          {/* 満員御礼バッジ */}
-                          <span
-                            className="font-['Noto_Sans_JP'] text-xs tracking-wider px-3 py-1 self-center"
-                            style={{ background: "#3d1a24", color: "#c9a96e" }}
-                          >
-                            満員御礼
-                          </span>
+                          {/* ステータスバッジ */}
+                          {service.badge && (
+                            <span
+                              className="font-['Noto_Sans_JP'] text-xs tracking-wider px-3 py-1 self-center"
+                              style={{ background: "#3d1a24", color: "#c9a96e" }}
+                            >
+                              {service.badge}
+                            </span>
+                          )}
                         </div>
                         <p
                           className="font-['Noto_Sans_JP'] font-light text-sm leading-loose"

@@ -36,6 +36,12 @@ export default function ServiceProducts() {
       label="Service 04"
       title="ウェルネス製品販売"
       subtitle="日常の健康維持やライフスタイル向上をサポートするウェルネス関連製品の販売。エッセンシャルオイルや自然由来製品など、生活に取り入れやすいウェルネスアイテムを取り扱っています。"
+      statusBanner={{
+        badge: "クライアント限定",
+        message: "現在はコーチング・サロン等のクライアント様向けに限定販売しております。一般向け販売は現在準備中です。詳細が決まり次第ご案内いたしますので、ご希望の方はお問い合わせフォームよりご登録ください。",
+        ctaLabel: "販売開始のお知らせを受け取る",
+        ctaHref: "/contact",
+      }}
     >
       <div className="grid lg:grid-cols-2 gap-16 mb-20">
         <motion.div

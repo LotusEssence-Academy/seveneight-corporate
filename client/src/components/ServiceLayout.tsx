@@ -16,9 +16,17 @@ interface ServiceLayoutProps {
   subtitle: string;
   heroImage?: string;
   children: React.ReactNode;
+  /** 製品販売ページなど、満員御礼以外のステータスを使う場合に指定 */
+  statusBanner?: {
+    badge: string;
+    message: string;
+    ctaLabel: string;
+    ctaHref: string;
+    ctaSection?: string;
+  };
 }
 
-export default function ServiceLayout({ label, title, subtitle, heroImage, children }: ServiceLayoutProps) {
+export default function ServiceLayout({ label, title, subtitle, heroImage, children, statusBanner }: ServiceLayoutProps) {
   return (
     <div className="min-h-screen" style={{ background: "#fdf8f5" }}>
       <Navbar />
@@ -107,7 +115,7 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
         </div>
       </section>
 
-      {/* 満員御礼バナー */}
+      {/* ステータスバナー */}
       <section style={{ background: "#fdf8f5" }}>
         <div className="container mx-auto px-6 lg:px-16">
           <motion.div
@@ -120,13 +128,15 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
             <div className="flex items-center gap-3 shrink-0">
               <Bell size={16} style={{ color: "#c9a96e" }} />
               <span className="font-['Cormorant_Garamond'] text-base tracking-wider" style={{ color: "#c9a96e" }}>
-                現在満員御礼
+                {statusBanner ? statusBanner.badge : "現在満員御礼"}
               </span>
             </div>
             <p className="font-['Noto_Sans_JP'] font-light text-sm leading-relaxed flex-1" style={{ color: "rgba(249,208,216,0.85)" }}>
-              現在、本サービスは定員に達しております。次回募集の際にご案内をご希望の方は、お問い合わせフォームよりご登録ください。
+              {statusBanner
+                ? statusBanner.message
+                : "現在、本サービスは定員に達しております。次回募集の際にご案内をご希望の方は、お問い合わせフォームよりご登録ください。"}
             </p>
-            <Link href="/contact">
+            <Link href={statusBanner ? statusBanner.ctaHref : "/contact"}>
               <span
                 className="font-['Noto_Sans_JP'] text-xs tracking-widest px-5 py-2.5 shrink-0 cursor-pointer transition-all duration-300 whitespace-nowrap"
                 style={{ border: "1px solid #c9a96e", color: "#c9a96e" }}
@@ -139,7 +149,7 @@ export default function ServiceLayout({ label, title, subtitle, heroImage, child
                   (e.currentTarget as HTMLElement).style.color = "#c9a96e";
                 }}
               >
-                再募集通知を受け取る
+                {statusBanner ? statusBanner.ctaLabel : "再募集通知を受け取る"}
               </span>
             </Link>
           </motion.div>
