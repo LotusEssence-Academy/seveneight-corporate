@@ -47,7 +47,7 @@ export default function About() {
         style={{ background: "#fdf8f5" }}
       >
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/Yi6kwSG58qzAbeinXax2Q4/lea-about-decoration-CCuri7QjXv7R4uZBF6aDBA.png"
+          src="/images/decoration.svg"
           alt=""
           className="absolute -top-10 -right-10 w-64 opacity-20 pointer-events-none"
         />
@@ -85,7 +85,7 @@ export default function About() {
                   style={{ border: "1px solid #c9a96e", opacity: 0.35 }}
                 />
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/8shFr8WNbEWnVqjzVdrQxY/erika-profile_5d2b0660.jpg"
+                  src="/images/erika-profile.jpg"
                   alt="代表 山﨑恵理香"
                   className="relative w-full object-cover"
                   style={{ maxHeight: "580px", objectPosition: "top" }}

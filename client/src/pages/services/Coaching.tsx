@@ -28,7 +28,7 @@ export default function ServiceCoaching() {
       label="Service 01"
       title={"Well-being\nパーソナルコーチング"}
       subtitle="個人の目標達成や人生設計をサポートするマンツーマンのコーチングセッション。思考整理、ビジョン設計、行動計画を通じてより主体的で自立した人生づくりをサポートします。"
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/8shFr8WNbEWnVqjzVdrQxY/erika-profile_5d2b0660.jpg"
+      heroImage="/images/erika-coaching.jpg"
     >
       {/* Features */}
       <div className="grid lg:grid-cols-2 gap-16 mb-20">

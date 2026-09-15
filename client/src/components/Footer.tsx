@@ -24,10 +24,9 @@ export default function Footer() {
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/8shFr8WNbEWnVqjzVdrQxY/lotus-gold_22580bc4.jpg"
+                src="/images/lotus-mark.svg"
                 alt="SeveneEight合同会社"
                 className="w-8 h-8 object-contain rounded-full opacity-90"
-                style={{ filter: "sepia(1) saturate(0.8) hue-rotate(290deg) brightness(1.1)" }}
               />
               <div className="flex flex-col leading-tight">
                 <span

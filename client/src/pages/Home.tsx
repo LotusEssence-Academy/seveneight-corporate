@@ -54,11 +54,11 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/Yi6kwSG58qzAbeinXax2Q4/lea-hero-bg-SFPveLR4dNDtPWGfPFcLcu.webp)` }}
+          style={{ backgroundImage: `url(/images/hero-bg.svg)` }}
         />
         <div className="absolute inset-0" style={{ background: "rgba(253,248,245,0.52)" }} />
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/Yi6kwSG58qzAbeinXax2Q4/lea-about-decoration-CCuri7QjXv7R4uZBF6aDBA.png"
+          src="/images/decoration.svg"
           alt=""
           className="absolute -bottom-8 -right-8 w-72 lg:w-96 opacity-35 pointer-events-none select-none"
         />
@@ -132,7 +132,7 @@ export default function Home() {
                   style={{ border: "1px solid #c9a96e", opacity: 0.35 }}
                 />
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/8shFr8WNbEWnVqjzVdrQxY/erika-profile_5d2b0660.jpg"
+                  src="/images/erika-profile.jpg"
                   alt="代表 山﨑恵理香"
                   className="relative w-full object-cover"
                   style={{ maxHeight: "520px", objectPosition: "top" }}
@@ -190,7 +190,7 @@ export default function Home() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/Yi6kwSG58qzAbeinXax2Q4/lea-mission-bg-mzDCYPUYp4n73yemf6odeT.webp)` }}
+          style={{ backgroundImage: `url(/images/mission-bg.svg)` }}
         />
         <div className="absolute inset-0" style={{ background: "rgba(61,26,36,0.72)" }} />
 

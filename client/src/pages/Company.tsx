@@ -24,7 +24,7 @@ export default function Company() {
       {/* Page Header */}
       <section className="relative pt-40 pb-20 overflow-hidden" style={{ background: "#fdf8f5" }}>
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663099953261/Yi6kwSG58qzAbeinXax2Q4/lea-about-decoration-CCuri7QjXv7R4uZBF6aDBA.png"
+          src="/images/decoration.svg"
           alt=""
           className="absolute -top-10 -right-10 w-64 opacity-20 pointer-events-none"
         />
